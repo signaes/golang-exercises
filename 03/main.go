@@ -18,6 +18,9 @@ func main() {
 		return bigger
 	}
 
+	s := []int{20, 30, 40, 60}
+
+	fmt.Println(max(s...))
 	fmt.Println(max(1, 40, 30, 34, 60, 90, 2))
 	fmt.Println(max(1, 400, 30, 34, 60, 90, 2))
 	fmt.Println(max(0, 2, 17, 3, 43, 78, 8))
