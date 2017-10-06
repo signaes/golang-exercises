@@ -9,8 +9,8 @@ func main() {
 	var s, space string
 
 	// os.Args -> []string
-	for i := 1; i < len(os.Args); i++ {
-		s += space + os.Args[i]
+	for _, arg := range os.Args[1:] {
+		s += space + arg
 		space = " "
 	}
 
