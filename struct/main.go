@@ -4,9 +4,7 @@ import "fmt"
 
 func main() {
 	type state struct {
-		name   string
-		region string
-		abbr   string
+		name, region, abbr string
 	}
 
 	df := state{
@@ -22,10 +20,8 @@ func main() {
 	}
 
 	type animal struct {
-		name           string
-		from           string
-		maxHeight      float64
-		naturalHabitat string
+		name, from, naturalHabitat string
+		maxHeight                  float64
 	}
 
 	type mammal struct {
