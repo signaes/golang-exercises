@@ -66,6 +66,23 @@ func main() {
 
 	fmt.Println(even)
 	fmt.Println(odd)
+
+	a := inc()
+	b := inc()
+
+	for w := 0; w < 40; w++ {
+		a()
+
+		if filterOdd(w) {
+			b()
+		}
+	}
+
+	fmt.Println(a())
+	fmt.Println(b())
+
+	fmt.Println(factorial(4))
+	fmt.Println(factorialLoop(4))
 }
 
 func refun() func() int {
@@ -90,4 +107,30 @@ func filter(x []int, f func(y int) bool) []int {
 	}
 
 	return r
+}
+
+func inc() func() int {
+	var x int
+	return func() int {
+		x++
+		return x
+	}
+}
+
+func factorial(x int) int {
+	if x == 0 {
+		return 1
+	}
+
+	return x * factorial(x-1)
+}
+
+func factorialLoop(x int) int {
+	y := 1
+
+	for ; x > 0; x-- {
+		y *= x
+	}
+
+	return y
 }
