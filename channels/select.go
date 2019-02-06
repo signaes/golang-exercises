@@ -48,6 +48,7 @@ func send(times int, e, o, p, q chan<- int) {
 
 	close(e)
 	close(o)
+	close(p)
 
 	q <- 0
 }
